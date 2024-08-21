@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import { api_url } from '../data/apiPath.js';
+
 function AllProducts() {
     const [products,setProducts]=useState([]);
     
