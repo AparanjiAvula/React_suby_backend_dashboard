@@ -5,7 +5,7 @@ function SideBar({ AddFirmHandler,AddProductHandler,AllProductsHandler,showFirmT
     <>
       <div className="sideBarSection">
         <ul>
-           {showFirmTitle && <li onClick={AddFirmHandler}>Add Firm</li>} 
+           {showFirmTitle ? <li onClick={AddFirmHandler}>Add Firm</li>:""} 
             <li onClick={AddProductHandler}>Add Product</li>
             <li onClick={AllProductsHandler}>All Products</li>
             <li>User Details</li>

@@ -22,7 +22,9 @@ useEffect(()=>{
   const loginToken=localStorage.getItem('loginToken');
   if(loginToken){
        setshowLogout(true);
+      //  window.location.reload();
   }
+  
 },[])
 
 
@@ -49,6 +51,7 @@ const showLoginHandler=()=>{
   setAddProduct(false);
   setShowWellcome(false)
   setallProducts(false)
+  setshowLogout(true);
 }
 const showRegisterHandler=()=>{
   setShowRegister(true);
@@ -100,7 +103,7 @@ const AllProductsHandler=()=>{
   setAddFirm(false);
   setAddProduct(false);
   setShowWellcome(false);
-  setallProducts(true)
+  setallProducts(true);
 }else{
   alert('Please LogIn');
   setShowLogin(true);
@@ -109,9 +112,13 @@ const AllProductsHandler=()=>{
   return (
     <>
       <section className="landingScreen">
-        <Navbar showLoginHandler={showLoginHandler} showRegisterHandler={showRegisterHandler} showLogout={showLogout} LogOutHandler={LogOutHandler}/>
+        <Navbar showLoginHandler={showLoginHandler} showRegisterHandler={showRegisterHandler} showLogout={showLogout}
+         LogOutHandler={LogOutHandler}/>
+
         <div className="collection">
-        <SideBar AllProductsHandler={AllProductsHandler} AddFirmHandler={AddFirmHandler} AddProductHandler={AddProductHandler} showFirmTitle={showFirmTitle}/>
+        <SideBar AllProductsHandler={AllProductsHandler} AddFirmHandler={AddFirmHandler} AddProductHandler={AddProductHandler} 
+        showFirmTitle={showFirmTitle}/>
+        
         {showLogin && <Login WellcomeHandler={WellcomeHandler}/>}
         {showRegister && <Register showLoginHandler={showLoginHandler}/>}
         { showAddFirm && showLogout && <AddFirm/>}

@@ -13,13 +13,13 @@ function Navbar({showLoginHandler,showRegisterHandler,showLogout,LogOutHandler})
         </div>
         <div className="userAuth">
           {
-            !showLogout?
+            showLogout ?
+             <span onClick={LogOutHandler}>LogOut</span>
+            :
             <>
             <span onClick={showLoginHandler}>Login /</span>&nbsp;
             <span onClick={showRegisterHandler}>Register</span>
             </>
-            :
-            <span onClick={LogOutHandler}>LogOut</span>
           }
             
             
